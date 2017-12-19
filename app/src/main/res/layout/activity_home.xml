@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--将对应的属性抽取到样式中去  光标放在控件内: 右键 –>Refactor –> Extract –>Style-->
+    <TextView
+        android:text="功能列表"
+        style="@style/TitleStytle" />
+<!--android:ellipsize="middle" 添加省略点所在位置，start Middle end -->
+    <!--想让文字出现跑马灯marquee必须让其获取焦点
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"-->
+    <!--        android:marqueeRepeatLimit="marquee_forever"一直滚动属性-->
+    <!--自定义控件达到滚动效果（其实就是重写原有的TextView让其一直能够获取焦点即可）-->
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="秋天秋天悄悄过去留下小秘密，啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+        android:textColor="#000" />-->
+    <com.duanshuo.mobilesafe.com.duanshuo.mobilesafe.view.FocusTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="秋天秋天悄悄过去留下小秘密，啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+        android:textColor="#000"/>
+    <!--android:numColumns="3" 指定列的数量-->
+    <!-- android:verticalSpacing="10dp" 指定内部条目竖直方向的间距-->
+    <GridView
+        android:id="@+id/gv_home"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </GridView>
+
+ </LinearLayout>
